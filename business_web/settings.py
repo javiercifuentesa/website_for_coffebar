@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-c=1m^8&-(t)&rszgd4(5y)3qj#q9u53o4=5(lrhcy5q4_(f7bl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cafeteria-rkz4.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
