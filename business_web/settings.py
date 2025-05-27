@@ -95,7 +95,7 @@ DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv('DATABASE_URL'),
         host=os.getenv('DB_HOST', 'dpg-d0qoajbipnbc73eip580-a'),
-        port=os.getenv('DB_PORT', '5432') 
+        port=os.getenv('DB_PORT', '5432'),
         database=os.getenv('DB_NAME', 'cateferia_db'),
         username=os.getenv('DB_USER', 'cateferia_db_user'),
         password=os.getenv('DB_PASSWORD', 'kFWQk0INbhWgi7ddZl4mMzgYkHBPI7DH')
