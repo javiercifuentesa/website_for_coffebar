@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,13 +84,23 @@ WSGI_APPLICATION = 'business_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        host=os.getenv('DB_HOST', 'dpg-d0qoajbipnbc73eip580-a'),
+        port=os.getenv('DB_PORT', '5432') 
+        database=os.getenv('DB_NAME', 'cateferia_db'),
+        username=os.getenv('DB_USER', 'cateferia_db_user'),
+        password=os.getenv('DB_PASSWORD', 'kFWQk0INbhWgi7ddZl4mMzgYkHBPI7DH')
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
